@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAppPatcher", "CAppPatcher.vcproj", "{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Chronicle|Win32 = Chronicle|Win32
+		Debug|Win32 = Debug|Win32
+		ENDLESS|Win32 = ENDLESS|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Chronicle|Win32.ActiveCfg = Chronicle|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Chronicle|Win32.Build.0 = Chronicle|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Debug|Win32.Build.0 = Debug|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.ENDLESS|Win32.ActiveCfg = ENDLESS|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.ENDLESS|Win32.Build.0 = ENDLESS|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Release|Win32.ActiveCfg = Release|Win32
+		{6E4034FA-D2B6-45F9-B8CD-E762D6BE342C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

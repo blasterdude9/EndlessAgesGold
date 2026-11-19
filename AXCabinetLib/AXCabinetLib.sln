@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AXCabinetLib", "AXCabinetLib.vcproj", "{39EA25D7-04B9-4671-ADD2-D4F0285816EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugMfcDyn|Win32 = DebugMfcDyn|Win32
+		Release|Win32 = Release|Win32
+		ReleaseMfcDyn|Win32 = ReleaseMfcDyn|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.Debug|Win32.Build.0 = Debug|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.DebugMfcDyn|Win32.ActiveCfg = DebugMfcDyn|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.DebugMfcDyn|Win32.Build.0 = DebugMfcDyn|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.Release|Win32.ActiveCfg = Release|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.Release|Win32.Build.0 = Release|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.ReleaseMfcDyn|Win32.ActiveCfg = ReleaseMfcDyn|Win32
+		{39EA25D7-04B9-4671-ADD2-D4F0285816EE}.ReleaseMfcDyn|Win32.Build.0 = ReleaseMfcDyn|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

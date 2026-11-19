@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewAI", "NewAI.csproj", "{9DDED074-140B-43C8-9035-EB8DDE037989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DDED074-140B-43C8-9035-EB8DDE037989}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{9DDED074-140B-43C8-9035-EB8DDE037989}.Debug|Default.Build.0 = Debug|Any CPU
+		{9DDED074-140B-43C8-9035-EB8DDE037989}.Release|Default.ActiveCfg = Release|Any CPU
+		{9DDED074-140B-43C8-9035-EB8DDE037989}.Release|Default.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

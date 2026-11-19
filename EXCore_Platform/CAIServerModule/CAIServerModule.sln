@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAIServerModule", "CAIServerModule.vcproj", "{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9} = {D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EXGameCore", "..\EXGameCore\EXGameCore\EXGameCore.vcproj", "{D8F80247-351A-4439-9D73-D23AD5706B17}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngine_ClientBase", "..\GameEngine_ClientBase\GameEngine_ClientBase.vcproj", "{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D8F80247-351A-4439-9D73-D23AD5706B17} = {D8F80247-351A-4439-9D73-D23AD5706B17}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AX_AIServerService", "..\AX_AIServerService\AX_AIServerService.vcproj", "{F960F6F2-FD23-43B6-A61A-486BC29A6B64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5} = {FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AIServerApplication", "..\AIServerApplication\AIServerApplication.vcproj", "{07FFF4F3-60C7-4BC7-9DB0-384E7B49B393}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5} = {FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}.Debug|Win32.Build.0 = Debug|Win32
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}.Release|Win32.ActiveCfg = Release|Win32
+		{FEE8DF3A-7F06-4DE5-B279-4EF6D98764A5}.Release|Win32.Build.0 = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Debug|Win32.Build.0 = Debug|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Release|Win32.ActiveCfg = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Release|Win32.Build.0 = Release|Win32
+		{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}.Debug|Win32.Build.0 = Debug|Win32
+		{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}.Release|Win32.ActiveCfg = Release|Win32
+		{D97B9B3C-C6C2-4ABF-8782-2B5AC0219EF9}.Release|Win32.Build.0 = Release|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Debug|Win32.Build.0 = Debug|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Release|Win32.ActiveCfg = Release|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Release|Win32.Build.0 = Release|Win32
+		{07FFF4F3-60C7-4BC7-9DB0-384E7B49B393}.Debug|Win32.ActiveCfg = Debug|Win32
+		{07FFF4F3-60C7-4BC7-9DB0-384E7B49B393}.Debug|Win32.Build.0 = Debug|Win32
+		{07FFF4F3-60C7-4BC7-9DB0-384E7B49B393}.Release|Win32.ActiveCfg = Release|Win32
+		{07FFF4F3-60C7-4BC7-9DB0-384E7B49B393}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

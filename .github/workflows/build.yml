@@ -1,0 +1,254 @@
+name: Build (VS2022)
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "What to build: auto (only what the commit touched), all, game (client + servers, no editor), server, launcher"
+        default: auto
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so git-restore-mtime can date each file
+
+      # Cache the legacy DirectX SDK so we don't re-download 570MB every run.
+      - name: Cache DirectX SDK (June 2010)
+        id: dxcache
+        uses: actions/cache@v4
+        with:
+          path: "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)"
+          key: dxsdk-jun2010
+
+      - name: Install legacy DirectX SDK (June 2010)
+        if: steps.dxcache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: choco install directx-sdk -y --no-progress
+
+      - name: Point to DirectX SDK
+        shell: pwsh
+        run: echo "DXSDK_DIR=C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\" >> $env:GITHUB_ENV
+
+      # Cache the build tree so only changed files recompile (incremental build).
+      # A new cache is saved each commit; the most recent prior one is restored.
+      - name: Cache build tree
+        uses: actions/cache@v4
+        with:
+          path: build
+          key: build-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            build-${{ runner.os }}-
+
+      # Fresh checkouts stamp every file 'now', which makes MSBuild rebuild the
+      # whole chain even on a cache hit. Reset each file's mtime to its last git
+      # commit time so unchanged files look older than the cached .obj and are
+      # skipped - only files changed since the cached build recompile.
+      - name: Restore source mtimes (enables incremental build cache)
+        shell: pwsh
+        run: python .github/ci/restore_mtime.py
+
+      # ------------------------------------------------------------------
+      # WHAT TO BUILD. Only the parts the commit touched get built and zipped:
+      #   - files only under the server folders (AXServerModule, AXServerApplication)
+      #     or non-code (sql, md, Claude outputs)  -> server only (AuraX-server zip)
+      #   - anything else (AuraX, NetworkExtension, client, editor, headers...)
+      #     -> client + editor too (AuraX-build zip), since they share that code
+      # Overrides: put [build-all] or [server-only] in the commit message, or
+      # pick "what" when running the workflow by hand.
+      # ------------------------------------------------------------------
+      - name: Decide what to build
+        id: what
+        shell: pwsh
+        run: |
+          $mode = '${{ github.event.inputs.what }}'
+          $msg  = @'
+          ${{ github.event.head_commit.message }}
+          '@
+          if ($msg -match '\[build-all\]')   { $mode = 'all' }
+          if ($msg -match '\[server-only\]') { $mode = 'server' }
+          if ($msg -match '\[launcher-only\]') { $mode = 'launcher' }
+          if ($msg -match '\[game\]')          { $mode = 'game' }
+          if (-not $mode -or $mode -eq 'auto') {
+            $before = '${{ github.event.before }}'
+            $changed = @()
+            if ($before -and $before -ne '0000000000000000000000000000000000000000') {
+              $changed = git diff --name-only $before ${{ github.sha }} 2>$null
+            }
+            if (-not $changed) { $changed = git diff --name-only HEAD~1 HEAD 2>$null }
+            Write-Host "Changed files:"; $changed | ForEach-Object { Write-Host "  $_" }
+            $serverOnly = $true
+            $launcherOnly = [bool]$changed
+            foreach ($f in $changed) {
+              if ($f -notmatch '^EXCore_Platform/EALauncher/') { $launcherOnly = $false }
+              if ($f -match '^EXCore_Platform/AXServerModule/' -or
+                  $f -match '^EXCore_Platform/AXServerApplication/' -or
+                  $f -match '^EXCore_Platform/CAIServerModule/' -or
+                  $f -match '^EXCore_Platform/AIServerApplication/' -or
+                  $f -match '^EXCore_Platform/EAContentServer/' -or
+                  $f -match '^EXCore_Platform/EALauncher/' -or
+                  $f -match '^EXCore_Platform/ServerTools/' -or
+                  $f -match '^Claude outputs/' -or
+                  $f -match '\.(sql|md|txt)$') { continue }
+              $serverOnly = $false
+            }
+            $mode = if ($launcherOnly) { 'launcher' } elseif ($serverOnly -and $changed) { 'server' } else { 'all' }
+          }
+          Write-Host "Build mode: $mode"
+          "client=$(if ($mode -eq 'all' -or $mode -eq 'game') {'true'} else {'false'})" >> $env:GITHUB_OUTPUT
+          "editor=$(if ($mode -eq 'all') {'true'} else {'false'})" >> $env:GITHUB_OUTPUT
+          "others=$(if ($mode -eq 'launcher') {'false'} else {'true'})" >> $env:GITHUB_OUTPUT
+          "extras=$(if ($mode -eq 'launcher' -or $mode -eq 'game') {'false'} else {'true'})" >> $env:GITHUB_OUTPUT
+
+      - name: Configure (CMake, VS2022, Win32)
+        run: cmake -S . -B build -A Win32
+
+      - name: Build and run asset importer tests
+        if: steps.what.outputs.extras == 'true'
+        shell: pwsh
+        run: |
+          cmake --build build --config Release --target AssimpEmbeddedTextureUtilsTests --target AssimpSceneConverterTests
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ctest --test-dir build -C Release --output-on-failure -R 'Assimp.*Tests'
+          exit $LASTEXITCODE
+
+      # ------------------------------------------------------------------
+      # FRONTIER TARGET: build only the module we're currently working on.
+      # A fresh CI checkout timestamps every file as new, so MSBuild would
+      # otherwise recompile the entire chain each run. Building just this
+      # target compiles only its own files (its prerequisites are headers,
+      # not built libs), so we reach the module under work fast instead of
+      # waiting through everything. Bump this as we climb the chain.
+      # The final client exe (EngineX) links everything and will pull the
+      # whole chain when we get there.
+      # ------------------------------------------------------------------
+      - name: Build editor + client (EngineX, EndlessAges)
+        if: steps.what.outputs.client == 'true'
+        shell: pwsh
+        run: |
+          $targets = @('--target','EndlessAges')
+          if ('${{ steps.what.outputs.editor }}' -eq 'true') { $targets = @('--target','EngineX') + $targets }
+          $out = cmake --build build --config Release @targets 2>&1
+          $code = $LASTEXITCODE
+          $out | ForEach-Object {
+            Write-Host $_
+            if ($code -ne 0 -and $_ -match ':\s*(fatal )?error\s+[A-Z]+\d+') {
+              Write-Host "::error::$_"
+            }
+          }
+          exit $code
+
+      - name: Stage files into tools/ and core/ folders
+        if: success() && steps.what.outputs.client == 'true'
+        shell: pwsh
+        run: |
+          $dlls = 'build/AuraX/Release/AuraXDynamic.dll','build/CDxRenderModule/Release/CDxRenderModule.dll','build/NetworkExtension/Release/NetworkExtension.dll'
+          $pdbs = 'build/AuraX/Release/AuraXDynamic.pdb','build/CDxRenderModule/Release/CDxRenderModule.pdb','build/NetworkExtension/Release/NetworkExtension.pdb'
+          New-Item -ItemType Directory -Force dist/tools, dist/core, dist/symbols | Out-Null
+          # tools  = everything that goes in the AuraEngine Tools folder (editor)
+          # core   = everything that goes in C:\Program Files\Core        (client)
+          Copy-Item build/EXCore_Platform/EngineMainApp/Release/EngineX.exe, build/EXCore_Platform/EngineMainApp/Release/EngineX.pdb dist/tools -ErrorAction SilentlyContinue
+          Copy-Item build/EXCore_Platform/CGameApp/CGameApp/Release/EndlessAges.exe, build/EXCore_Platform/CGameApp/CGameApp/Release/EndlessAges.pdb dist/core -ErrorAction SilentlyContinue
+          Copy-Item $dlls dist/tools; Copy-Item $dlls dist/core; Copy-Item $pdbs dist/symbols
+          Get-ChildItem -Recurse dist | Select-Object FullName, Length
+
+      - name: Upload build output
+        if: success() && steps.what.outputs.client == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: AuraX-build
+          path: dist
+          if-no-files-found: warn
+
+      # ------------------------------------------------------------------
+      # GAME & AI SERVERS. Allowed to fail while in progress
+      # so a server compile error never blocks the editor / client artifact.
+      # Own zip: AuraX-server (server\ folder).
+      # ------------------------------------------------------------------
+      - name: Build game + AI servers (AxserverApp, AIServerApp) - may fail while in progress
+        id: server
+        if: steps.what.outputs.others == 'true'
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          Write-Host "=== Building AxserverApp ==="
+          cmake --build build --config Release --target AxserverApp
+          Write-Host "=== Building AIServerApp ==="
+          cmake --build build --config Release --target AIServerApp
+          Write-Host "=== Building ContentServer ==="
+          cmake --build build --config Release --target ContentServer
+
+      - name: Stage server files
+        if: always() && steps.what.outputs.others == 'true'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist-server/server | Out-Null
+          Copy-Item build/EXCore_Platform/AXServerApplication/Release/AxserverApp.exe, build/EXCore_Platform/AXServerApplication/Release/AxserverApp.pdb dist-server/server -ErrorAction SilentlyContinue
+          Copy-Item build/EXCore_Platform/AIServerApplication/Release/AIServerApp.exe, build/EXCore_Platform/AIServerApplication/Release/AIServerApp.pdb dist-server/server -ErrorAction SilentlyContinue
+          Copy-Item build/EXCore_Platform/EAContentServer/Release/ContentServer.exe, build/EXCore_Platform/EAContentServer/Release/ContentServer.pdb dist-server/server -ErrorAction SilentlyContinue
+          Copy-Item build/AuraX/Release/AuraXDynamic.dll, build/CDxRenderModule/Release/CDxRenderModule.dll, build/NetworkExtension/Release/NetworkExtension.dll dist-server/server -ErrorAction SilentlyContinue
+          Get-ChildItem -Recurse dist-server | Select-Object FullName, Length
+
+      - name: Upload server output
+        if: always() && steps.what.outputs.others == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: AuraX-server
+          path: dist-server
+          if-no-files-found: warn
+
+      # ------------------------------------------------------------------
+      # LAUNCHER (EALauncher.exe -> C:\Program Files\Core, and the content
+      # server's Patch folder so players get it too). Small, always built.
+      # ------------------------------------------------------------------
+      - name: Build launcher (EALauncher)
+        if: always()
+        continue-on-error: true
+        run: cmake --build build --config Release --target EALauncher
+
+      - name: Stage launcher
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist-launcher | Out-Null
+          Copy-Item build/EXCore_Platform/EALauncher/Release/EALauncher.exe, build/EXCore_Platform/EALauncher/Release/EALauncher.pdb dist-launcher -ErrorAction SilentlyContinue
+          Get-ChildItem dist-launcher | Select-Object FullName, Length
+
+      - name: Upload launcher
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EALauncher
+          path: dist-launcher
+          if-no-files-found: warn
+
+      # ------------------------------------------------------------------
+      # SERVER TOOLS (ServerTools.exe - the old web tools as a Windows app).
+      # C# / .NET Framework 4.8, built with the dotnet SDK. Always built.
+      # ------------------------------------------------------------------
+      - name: Build ServerTools
+        if: always() && steps.what.outputs.extras == 'true'
+        continue-on-error: true
+        run: dotnet build EXCore_Platform/ServerTools/ServerTools.csproj -c Release -o dist-servertools
+
+      - name: Upload ServerTools
+        if: always() && steps.what.outputs.extras == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ServerTools
+          path: |
+            dist-servertools/ServerTools.exe
+            dist-servertools/ServerTools.exe.config
+            dist-servertools/ServerTools.pdb
+          if-no-files-found: warn
+      # Remember which commit the cached build tree now matches, so the next run's
+      # restore_mtime.py recompiles every file changed since (merges included).
+      # Only after a full client + server build succeeded - otherwise leave the old
+      # record so nothing is skipped.
+      - name: Record commit the build tree was built from
+        if: steps.what.outputs.client == 'true' && steps.server.outcome == 'success'
+        shell: pwsh
+        run: Set-Content -Path build/.ci_built_sha -Value '${{ github.sha }}' -NoNewline

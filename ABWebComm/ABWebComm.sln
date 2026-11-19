@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ABWebComm", "ABWebComm.vcproj", "{6E701BDB-4C31-41F2-9662-8C35AB48787E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		DebugMfcDyn = DebugMfcDyn
+		Release = Release
+		ReleaseMfcDyn = ReleaseMfcDyn
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.Debug.ActiveCfg = Debug|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.Debug.Build.0 = Debug|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.DebugMfcDyn.ActiveCfg = DebugMfcDyn|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.DebugMfcDyn.Build.0 = DebugMfcDyn|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.Release.ActiveCfg = Release|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.Release.Build.0 = Release|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.ReleaseMfcDyn.ActiveCfg = ReleaseMfcDyn|Win32
+		{6E701BDB-4C31-41F2-9662-8C35AB48787E}.ReleaseMfcDyn.Build.0 = ReleaseMfcDyn|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

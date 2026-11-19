@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AuraX", "AuraXDynamic.vcxproj", "{FC6BD838-378D-4BA4-9D95-647F81C79B6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AuraXDynamic|Win32 = AuraXDynamic|Win32
+		AXControl|Win32 = AXControl|Win32
+		Debug|Win32 = Debug|Win32
+		DebugStatic|Win32 = DebugStatic|Win32
+		Release|Win32 = Release|Win32
+		ReleaseStatic|Win32 = ReleaseStatic|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.AuraXDynamic|Win32.ActiveCfg = AuraXDynamic|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.AuraXDynamic|Win32.Build.0 = AuraXDynamic|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.AXControl|Win32.ActiveCfg = AXControl|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.AXControl|Win32.Build.0 = AXControl|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.Debug|Win32.Build.0 = Debug|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.DebugStatic|Win32.ActiveCfg = DebugStatic|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.DebugStatic|Win32.Build.0 = DebugStatic|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.Release|Win32.ActiveCfg = Release|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.Release|Win32.Build.0 = Release|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.ReleaseStatic|Win32.ActiveCfg = ReleaseStatic|Win32
+		{FC6BD838-378D-4BA4-9D95-647F81C79B6B}.ReleaseStatic|Win32.Build.0 = ReleaseStatic|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

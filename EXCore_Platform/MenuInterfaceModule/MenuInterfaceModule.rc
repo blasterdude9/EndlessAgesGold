@@ -1,0 +1,202 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\MenuInterfaceModule.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_NAVUI DIALOGEX 0, 0, 391, 30
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Nav UI"
+MENU IDR_MENU_NAV
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_NAVUI, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 390
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 28
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_NAV MENU 
+BEGIN
+    POPUP "Quick"
+    BEGIN
+        MENUITEM "Play Here (walk around as the picked character)", ID_QUICK_PLAYHERE
+        MENUITEM "Back To Editor Camera",       ID_QUICK_BACKTOEDITOR
+        MENUITEM SEPARATOR
+        MENUITEM "Where Am I (copy X Y Z)",     ID_QUICK_WHEREAMI
+        MENUITEM "Go To...",                    ID_QUICK_GOTO
+        MENUITEM SEPARATOR
+        MENUITEM "Export Character For Blender (glTF)...", ID_QUICK_EXPORTCHARACTER
+        MENUITEM "Copy Character As New Entity...", ID_QUICK_COPYENTITY
+        MENUITEM "New Race Wizard...", ID_QUICK_NEWRACEWIZARD
+        MENUITEM "Export Character + All Outfits (for refit)...", ID_QUICK_EXPORTOUTFITS
+        MENUITEM "Import Character From Blender (glTF)...", ID_QUICK_IMPORTCHARACTER
+        MENUITEM "Give All Tops Jiggle (picked character)", ID_QUICK_GIVETOPSJIGGLE
+        MENUITEM "Give Race The Same Items As... (armor, weapons, jetpacks)", ID_QUICK_COPYITEMRACE
+        MENUITEM SEPARATOR
+        MENUITEM "Send To Game (Core + EA server)...", ID_QUICK_SENDTOGAME
+        MENUITEM "Set Send-To-Game Folders...", ID_QUICK_SETGAMEPATHS
+    END
+    MENUITEM "World",                       ID_WORLD
+    MENUITEM "Characters",                  ID_CHARACTERS
+    POPUP "Environment"
+    BEGIN
+        MENUITEM "Action Zones",                ID_ENVIRONMENT_ACTIONZONES
+    END
+    POPUP "Gamplay Modules"
+    BEGIN
+        MENUITEM "Kingdoms Manager",            ID_GAMPLAYMODULES_KINGDOMSMANAGER
+    END
+    POPUP "Initialization"
+    BEGIN
+        MENUITEM "Load Script Manager",         ID_INITIALIZATION_LOADSCRIPTMANAGER
+        MENUITEM "Scene Script Manager",        ID_INITIALIZATION_SCENESCRIPTMANAGER
+    END
+    POPUP "Sound"
+    BEGIN
+        MENUITEM "Music Manager",               ID_SOUND_MUSICMANAGER
+    END
+    POPUP "Display"
+    BEGIN
+        MENUITEM "Post Effects",                ID_DISPLAY_POSTEFFECTS
+        MENUITEM "Lock View",                   32778
+        MENUITEM "Capture Zone Map",            ID_DISPLAY_CAPTUREZONEMAP
+        MENUITEM "Capture All Zone Maps",       ID_DISPLAY_CAPTUREALLZONEMAPS
+    END
+    MENUITEM "Help",                        ID_HELP32775
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_BUTTON_KingdomModule
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_KingdomModule "Kindom Module"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+//#include "res\MenuInterfaceModule.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

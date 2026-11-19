@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\Projects\ContentManagement\", ".", "{F6E40D5E-FD98-46EA-B243-C677AFDD87C6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ContentManagement"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Projects\ContentManagement\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ContentManagement\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ContentManagement"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Projects\ContentManagement\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ContentManagement\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1071"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6E40D5E-FD98-46EA-B243-C677AFDD87C6}.Debug|.NET.ActiveCfg = Debug|.NET
+		{F6E40D5E-FD98-46EA-B243-C677AFDD87C6}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

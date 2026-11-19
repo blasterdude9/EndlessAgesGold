@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XsrcInstaller", "XsrcInstaller.vcproj", "{B1336217-94BC-4274-A982-B142A29A3636}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		DebugMfcDyn = DebugMfcDyn
+		Installer = Installer
+		Release = Release
+		ReleaseInstaller = ReleaseInstaller
+		ReleaseMfcDyn = ReleaseMfcDyn
+		Uninstaller = Uninstaller
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B1336217-94BC-4274-A982-B142A29A3636}.Debug.ActiveCfg = Debug|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Debug.Build.0 = Debug|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.DebugMfcDyn.ActiveCfg = Debug|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.DebugMfcDyn.Build.0 = Debug|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Installer.ActiveCfg = Installer|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Installer.Build.0 = Installer|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Release.ActiveCfg = Release|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Release.Build.0 = Release|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.ReleaseInstaller.ActiveCfg = ReleaseInstaller|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.ReleaseInstaller.Build.0 = ReleaseInstaller|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.ReleaseMfcDyn.ActiveCfg = ReleaseInstaller|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.ReleaseMfcDyn.Build.0 = ReleaseInstaller|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Uninstaller.ActiveCfg = Uninstaller|Win32
+		{B1336217-94BC-4274-A982-B142A29A3636}.Uninstaller.Build.0 = Uninstaller|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

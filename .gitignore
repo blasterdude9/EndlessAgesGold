@@ -1,0 +1,15 @@
+Debug/
+Release/
+*.ncb
+*.suo
+*.user
+*.aps
+*.pch
+*.obj
+*.ilk
+*.pdb
+*.idb
+
+__pycache__/
+*.pyc
+Claude outputs/

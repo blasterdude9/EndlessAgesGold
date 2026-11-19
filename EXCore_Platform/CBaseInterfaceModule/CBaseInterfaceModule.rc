@@ -1,0 +1,377 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\CBaseInterfaceModule.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_Test DIALOGEX 0, 0, 187, 91
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "test",IDC_BUTTON_FuncTest,130,62,50,14
+END
+
+IDD_TESTDLG DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,129,26,50,16
+    PUSHBUTTON      "Button1",IDC_BUTTON1,46,40,50,22
+    EDITTEXT        IDC_EDIT_testStaticed,131,65,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_KingdomsManager DIALOGEX 0, 0, 399, 328
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTERMOUSE | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Kingdoms Manager"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,342,307,50,14
+    LISTBOX         IDC_LIST_KingdomObjects,7,12,120,252,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Kingdom Object Management",IDC_STATIC,131,0,261,303
+    LISTBOX         IDC_LIST_ControllerSpawns,139,90,102,136,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Kingdoms",IDC_STATIC,7,2,32,8
+    GROUPBOX        "Controller Spawns",IDC_STATIC,134,75,258,154
+    EDITTEXT        IDC_EDIT_KingdomName,134,10,70,12,ES_AUTOHSCROLL
+    LTEXT           "Kingdom Name",IDC_STATIC,210,10,50,8
+    EDITTEXT        IDC_EDIT_WorldChannelID,134,23,70,12,ES_AUTOHSCROLL
+    LTEXT           "World Channel ID",IDC_STATIC,210,23,58,8
+    PUSHBUTTON      "Add",IDC_BUTTON_AddController,244,90,50,12
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteController,244,103,50,12
+    PUSHBUTTON      "Replace",IDC_BUTTON_ReplaceController,244,116,50,12
+    COMBOBOX        IDC_COMBO_AIList,244,130,113,146,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PosX,244,143,50,12,ES_AUTOHSCROLL
+    LTEXT           "PosX",IDC_STATIC,298,144,17,8
+    EDITTEXT        IDC_EDIT_PosY,244,155,50,12,ES_AUTOHSCROLL
+    LTEXT           "PosY",IDC_STATIC,298,156,22,8
+    EDITTEXT        IDC_EDIT_PosZ,244,167,50,12,ES_AUTOHSCROLL
+    LTEXT           "PosZ",IDC_STATIC,298,168,16,8
+    PUSHBUTTON      "Add",IDC_BUTTON_AddKingdomManager,134,36,49,12
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteKingdomManager,134,62,49,12
+    PUSHBUTTON      "Replace",IDC_BUTTON_ReplaceKingdomManager,134,49,49,12
+    PUSHBUTTON      "Export DB",IDC_BUTTON_ExportDB,294,307,48,14
+    PUSHBUTTON      "Import DB",IDC_BUTTON_ImportDB,244,307,49,14
+    EDITTEXT        IDC_EDIT_UniqueMinionID,244,179,50,12,ES_AUTOHSCROLL
+    LTEXT           "Unique Id of Minion",IDC_STATIC,298,180,64,8
+    EDITTEXT        IDC_EDIT_MaxMinionSpawnCount,244,191,50,12,ES_AUTOHSCROLL
+    LTEXT           "Max Minion Spawn Count",IDC_STATIC,298,192,83,8
+    EDITTEXT        IDC_EDIT_MinionSpawnDuration,244,203,50,12,ES_AUTOHSCROLL
+    LTEXT           "Minion Spawn Duration",IDC_STATIC,298,204,76,8
+    COMBOBOX        IDC_COMBO_MinionAiCfgList,244,215,113,146,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "aicfg",IDC_STATIC,362,130,16,8
+    LTEXT           "m aicfg",IDC_STATIC,362,213,25,8
+    GROUPBOX        "Minion Spawn Locations(if none uses controller location)",IDC_STATIC,134,233,258,67
+    LISTBOX         IDC_LIST_MSpawnLists,138,246,102,49,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_BUTTON_AddMSpawn,244,246,50,12
+    PUSHBUTTON      "Replace",IDC_BUTTON_ReplaceMSpawn,244,259,50,12
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteMSpawn,244,272,50,12
+    EDITTEXT        IDC_EDIT_mSpawnX,298,246,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_mSpawnY,298,258,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_mSpawnZ,298,270,40,12,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,341,246,8,8
+    LTEXT           "Y",IDC_STATIC,341,258,8,8
+    LTEXT           "Z",IDC_STATIC,341,270,8,8
+END
+
+IDD_DIALOG_PostEffectDialog DIALOGEX 0, 0, 399, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Post effect creator"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,354,155,38,14
+    COMBOBOX        IDC_COMBO_pixelShaderSelection,148,48,134,202,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Pixel Shader",IDC_STATIC,289,50,42,8
+    COMBOBOX        IDC_COMBO_TextureSelectLevel1,150,73,132,198,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Texture Assignment",IDC_STATIC,147,62,204,107
+    LTEXT           "Texture Level 1",IDC_STATIC,288,75,51,8
+    COMBOBOX        IDC_COMBO_textureSelectLevel2,150,86,132,191,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 2",IDC_STATIC,288,88,51,8
+    COMBOBOX        IDC_COMBO_textureSelectLevel3,150,99,132,190,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 3",IDC_STATIC,288,101,51,8
+    PUSHBUTTON      "Apply Live",IDC_BUTTON_ApplyLive,354,140,38,14
+    COMBOBOX        IDC_COMBO_textureSelectLevel4,150,112,132,181,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 4",IDC_STATIC,288,114,51,8
+    COMBOBOX        IDC_COMBO_textureSelectLevel5,150,125,132,168,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 5",IDC_STATIC,288,127,51,8
+    COMBOBOX        IDC_COMBO_textureSelectLevel6,150,138,132,155,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 6",IDC_STATIC,288,140,51,8
+    COMBOBOX        IDC_COMBO_textureSelectLevel7,150,151,132,145,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Texture Level 7",IDC_STATIC,288,153,51,8
+    LISTBOX         IDC_LIST_postEffectList,10,16,132,153,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Post Effects",IDC_STATIC,10,7,39,8
+    EDITTEXT        IDC_EDIT_postEffectName,148,16,134,12,ES_AUTOHSCROLL
+    LTEXT           "Post Effect Name",IDC_STATIC,289,18,56,8
+    PUSHBUTTON      "Add New",IDC_BUTTON_AddNew,354,7,38,14
+    PUSHBUTTON      "Replace",IDC_BUTTON_Replace,354,22,38,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE,354,37,38,14
+    PUSHBUTTON      "Disable Post effects",IDC_BUTTON_DisablePostEffects,354,110,38,29,BS_MULTILINE
+    PUSHBUTTON      "Export",IDC_BUTTON_Export,354,54,38,14
+    PUSHBUTTON      "Import",IDC_BUTTON_Import,354,69,38,14
+END
+
+IDD_DIALOG_LoadScripts DIALOGEX 0, 0, 263, 314
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Load Scripts"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Make Live",IDOK,199,283,57,11
+    CONTROL         "",IDC_LIST_scriptsList,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,17,249,183
+    LTEXT           "Load Script List",IDC_STATIC,7,7,51,8
+    PUSHBUTTON      "Add",IDC_BUTTON_AddScriptEvent,199,207,57,11
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteScriptEvent,199,219,57,11
+    PUSHBUTTON      "Replace",IDC_BUTTON_ReplaceScriptEvent,199,231,57,11
+    EDITTEXT        IDC_EDIT1,78,225,72,12,ES_AUTOHSCROLL
+    GROUPBOX        "Data",IDC_STATIC,7,203,187,104
+    LTEXT           "Misc Int",IDC_STATIC_miscInt,154,230,26,8
+    EDITTEXT        IDC_EDIT2,78,238,72,12,ES_AUTOHSCROLL
+    LTEXT           "Type",IDC_STATIC_type,154,216,17,8
+    LTEXT           "Misc String",IDC_STATIC_miscString,154,243,37,8
+    COMBOBOX        IDC_COMBO_TypeList,12,212,138,130,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Close",IDCANCEL,199,296,57,11
+    PUSHBUTTON      "Load From File",IDC_BTN_LoadFromFile,199,246,57,11,BS_MULTILINE
+    PUSHBUTTON      "Save To File",IDC_BTN_SaveToFile,199,258,57,11,BS_MULTILINE
+END
+
+IDD_DIALOG_MusicDlg DIALOGEX 0, 0, 313, 226
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Music Manager"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,271,199,35,20
+    LISTBOX         IDC_LIST_SoundTrackList,7,17,299,96,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_BUTTON_AddSoundTrack,187,161,52,14
+    GROUPBOX        "Options",IDC_STATIC,7,119,234,88
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteSoundTrack,187,176,52,14
+    PUSHBUTTON      "Replace",IDC_BUTTON_ReplaceSoundTrack,187,191,52,14
+    EDITTEXT        IDC_EDIT_SoundTrackName,88,126,149,12,ES_AUTOHSCROLL
+    LTEXT           "Sound Track Name:",IDC_STATIC,24,129,63,8
+    EDITTEXT        IDC_EDIT_SoundTrackURLorPATH,88,139,149,12,ES_AUTOHSCROLL
+    LTEXT           "Sound Track Url/Path:",IDC_STATIC,16,141,71,8
+    LTEXT           "Sound Tracks/ url streaming music channels",IDC_STATIC,7,7,139,8
+    PUSHBUTTON      "Save DB",ID_BTN_SaveSDDB,271,177,35,20
+    PUSHBUTTON      "Load DB",ID_BTN_LoadSDDB,271,156,35,20
+    PUSHBUTTON      "Test",ID_BTN_TestMusic,271,135,35,20
+    LTEXT           "",IDC_STATIC_outputUrltype,88,152,98,8
+END
+
+IDD_DIALOG_ActionZonesDlg DIALOGEX 0, 0, 251, 338
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Action Zones"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,194,317,50,14
+    LISTBOX         IDC_LIST_Channels,15,16,102,80,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Replace",IDC_BUTTON_ACReplace,188,125,50,14
+    LISTBOX         IDC_LIST_ZoneList,14,112,103,165,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Action Zones",IDC_STATIC,7,101,237,183
+    PUSHBUTTON      "Add",IDC_BUTTON_ACAdd,188,111,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_ACDelete,188,139,50,14
+    EDITTEXT        IDC_EDIT_actionValue,198,222,40,12,ES_AUTOHSCROLL
+    LTEXT           "Action Value",IDC_STATIC,156,222,40,8
+    COMBOBOX        IDC_COMBO_ActionType,150,236,88,119,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Load DB",IDC_BUTTON_LoadDB,194,286,50,14
+    PUSHBUTTON      "Save DB",IDC_BUTTON_SaveDB,194,301,50,14
+    GROUPBOX        "World Channels",IDC_STATIC,7,7,237,92
+    PUSHBUTTON      "Add",IDC_BUTTON_ACAddChannel,188,15,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_ACDeleteChannel,188,30,50,14
+    GROUPBOX        "Bounding Box",IDC_STATIC,123,156,115,60
+    EDITTEXT        IDC_EDIT_MaxX,148,176,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MaxY,148,189,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MaxZ,148,202,32,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Load ARW",IDC_BUTTON_LoadARW,186,162,50,10
+    LTEXT           "MaxX",IDC_STATIC,128,175,18,8
+    LTEXT           "MaxY",IDC_STATIC,128,188,18,8
+    LTEXT           "MaxZ",IDC_STATIC,128,201,18,8
+    EDITTEXT        IDC_EDIT_MinX,203,176,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MinY,203,189,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MinZ,203,202,32,12,ES_AUTOHSCROLL
+    LTEXT           "MinX",IDC_STATIC,184,175,16,8
+    LTEXT           "MinY",IDC_STATIC,184,187,16,8
+    LTEXT           "MinZ",IDC_STATIC,184,199,16,8
+    EDITTEXT        IDC_EDIT_zoneLabel,198,251,40,12,ES_AUTOHSCROLL
+    LTEXT           "Zone Name",IDC_STATIC,158,252,37,8
+    EDITTEXT        IDC_EDIT_attributeValue,198,264,40,12,ES_AUTOHSCROLL
+    LTEXT           "Attribute Value",IDC_STATIC,146,264,49,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_Test, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 84
+    END
+
+    IDD_TESTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG_KingdomsManager, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 392
+        VERTGUIDE, 134
+        VERTGUIDE, 138
+        VERTGUIDE, 204
+        VERTGUIDE, 210
+        VERTGUIDE, 240
+        VERTGUIDE, 244
+        VERTGUIDE, 294
+        VERTGUIDE, 298
+        VERTGUIDE, 357
+        VERTGUIDE, 362
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 321
+        HORZGUIDE, 20
+    END
+
+    IDD_DIALOG_PostEffectDialog, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 392
+        VERTGUIDE, 10
+        VERTGUIDE, 142
+        VERTGUIDE, 148
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_DIALOG_LoadScripts, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        VERTGUIDE, 12
+        VERTGUIDE, 78
+        VERTGUIDE, 150
+        VERTGUIDE, 157
+        VERTGUIDE, 194
+        VERTGUIDE, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DIALOG_MusicDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DIALOG_ActionZonesDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        VERTGUIDE, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+//#include "CBaseInterfaceModule.rc"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

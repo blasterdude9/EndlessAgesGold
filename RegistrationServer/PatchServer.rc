@@ -1,0 +1,319 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PatchServer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PatchServer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PatchServer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PatchServer Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DIALOG_serverSettings DIALOG DISCARDABLE  0, 0, 173, 283
+STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Server Settings"
+FONT 8, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,130,253,40,23
+    LISTBOX         IDC_LIST_PatchDatabase,6,18,116,74,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Load Database",IDC_BUTTON_LoadDatabase,124,38,40,21,
+                    BS_MULTILINE
+    LISTBOX         IDC_LIST_AvailableServers,6,122,104,48,
+                    LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Available Servers",IDC_STATIC,3,113,167,93
+    PUSHBUTTON      "Add",IDC_BUTTON_AddServer,124,174,40,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_DeleteServer,124,189,40,14
+    EDITTEXT        IDC_EDIT_IPAdress,5,192,69,12,ES_AUTOHSCROLL
+    LTEXT           "IP Adress",IDC_STATIC,76,195,32,8
+    EDITTEXT        IDC_EDIT_ServerName,5,179,69,12,ES_AUTOHSCROLL
+    LTEXT           "Server Name",IDC_STATIC,76,183,43,8
+    GROUPBOX        "Patch Database",IDC_STATIC,3,7,167,102
+    PUSHBUTTON      "Load From File",IDC_BUTTON_LoadFromFile,124,123,40,20,
+                    BS_MULTILINE
+    PUSHBUTTON      "Save To File",IDC_BUTTON_SaveToFile,124,144,40,20,
+                    BS_MULTILINE
+    PUSHBUTTON      "Add Patch",IDC_BUTTON_AddPatch,124,60,40,14
+    PUSHBUTTON      "Delete Patch",IDC_BUTTON_DeletePatch,124,74,40,19,
+                    BS_MULTILINE
+    EDITTEXT        IDC_EDIT_versionOutput,141,95,23,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Ver",IDC_BUTTON_SetVersion,112,95,29,12
+    PUSHBUTTON      "Save Database",IDC_BUTTON_SaveDatabase,124,18,40,20,
+                    BS_MULTILINE
+    GROUPBOX        "Accounts Reference",IDC_STATIC,3,210,167,40
+    PUSHBUTTON      "Load DB",IDC_BUTTON_LoadAccounts,123,220,41,14
+END
+
+IDD_DIALOG_MAPVIEW DIALOG DISCARDABLE  0, 0, 360, 310
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,334,296,26,14
+END
+
+IDD_DIALOG_PatchBuilder DIALOG DISCARDABLE  0, 0, 161, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Patch Build"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Build",IDOK,115,120,39,14
+    PUSHBUTTON      "Abort",IDCANCEL,89,120,25,14
+    EDITTEXT        IDC_EDIT_SearchLength,13,45,44,15,ES_AUTOHSCROLL
+    GROUPBOX        "Patch Sys Perameters",IDC_STATIC,7,24,147,54
+    CONTROL         "Use Existing File",IDC_CHECK_UseExistingFile,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,35,67,10
+    LTEXT           "Search Length Larger The Slower",IDC_STATIC,59,44,67,16
+    EDITTEXT        IDC_EDIT_OldFilePath,13,61,73,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "B",IDC_BUTTON_BroewseForOldFile,87,62,12,14
+    LTEXT           "Old File To Mod",IDC_STATIC,100,68,51,8
+    EDITTEXT        IDC_EDIT_newFile,7,7,95,12,ES_AUTOHSCROLL
+    LTEXT           "New File",IDC_STATIC,117,12,36,8
+    PUSHBUTTON      "B",IDC_BUTTON_BrowseForNewFile,103,7,12,13
+    EDITTEXT        IDC_EDIT_patchLabel,49,91,56,12,ES_AUTOHSCROLL
+    GROUPBOX        "Output",IDC_STATIC,45,82,109,35
+    LTEXT           "Patch Label",IDC_STATIC,107,94,39,8
+END
+
+IDD_PATCHSERVER_DIALOG DIALOGEX 0, 0, 333, 215
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,294,194,39,21
+    LTEXT           "Status",IDC_STATIC,0,207,21,8
+    LTEXT           "",IDC_STATIC_Status,23,207,268,8
+    CONTROL         "Progress1",IDC_PROGRESS_DLDProgress,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,0,188,119,8
+    PUSHBUTTON      "Force",IDC_BUTTON_testcode,294,178,39,15
+    LISTBOX         IDC_LIST_targetServers,3,12,149,57,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_BUTTON_Add,156,12,47,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_Delete,156,26,47,14
+    GROUPBOX        "Game Servers in update system",IDC_STATIC,-2,0,208,107
+    EDITTEXT        IDC_EDIT_IPAdress,75,71,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ServerName,75,84,76,12,ES_AUTOHSCROLL
+    LTEXT           "IP Adress",IDC_STATIC,156,71,31,8
+    LTEXT           "Server Name",IDC_STATIC,156,85,42,8
+    CONTROL         "Enable System",IDC_CHECK_EnableSystem,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,0,196,63,10
+    PUSHBUTTON      "Save",IDC_BUTTON_Save,156,40,47,14
+    PUSHBUTTON      "Load",IDC_BUTTON_Load,156,54,47,14
+    LISTBOX         IDC_LIST_history,208,9,117,83,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "History",IDC_STATIC,208,0,22,8
+    PUSHBUTTON      "Load",IDC_BUTTON_loadHistory,291,93,34,14
+    PUSHBUTTON      "Save",IDC_BUTTON_saveHistory,256,93,34,14
+    EDITTEXT        IDC_EDIT_cycleDuration,5,152,56,12,ES_AUTOHSCROLL
+    GROUPBOX        "Settings",IDC_STATIC,0,111,287,76
+    LTEXT           "Cycle Duration",IDC_STATIC,63,157,47,8
+    EDITTEXT        IDC_EDIT_getSignupsURL,5,137,214,14,ES_AUTOHSCROLL
+    LTEXT           "Get Signups URL",IDC_STATIC,221,143,56,8
+    EDITTEXT        IDC_EDIT_registrationURL,5,122,214,14,ES_AUTOHSCROLL
+    LTEXT           "Registration URL",IDC_STATIC,221,128,55,8
+    EDITTEXT        IDC_EDIT_packetSendSpeedMS,5,170,36,12,ES_AUTOHSCROLL
+    LTEXT           "Packet send speed restruction",IDC_STATIC,43,174,97,8
+    PUSHBUTTON      "Rebuild / Refresh Account",IDC_BUTTON_RebuildAccounts,
+                    294,138,39,37,BS_MULTILINE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PatchServer MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "PatchServer\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PatchServer.EXE\0"
+            VALUE "ProductName", "PatchServer Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG_serverSettings, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 170
+        VERTGUIDE, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 276
+    END
+
+    IDD_DIALOG_PatchBuilder, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_PATCHSERVER_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 154
+        VERTGUIDE, 159
+        VERTGUIDE, 206
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PatchServer..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PatchServer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AXServerApplication", "AXServerApplication.vcproj", "{D2D30BF7-8796-4D0B-BA4B-56426824F46D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D2D30BF7-8796-4D0B-BA4B-56426824F46D}.Debug.ActiveCfg = Debug|Win32
+		{D2D30BF7-8796-4D0B-BA4B-56426824F46D}.Debug.Build.0 = Debug|Win32
+		{D2D30BF7-8796-4D0B-BA4B-56426824F46D}.Release.ActiveCfg = Release|Win32
+		{D2D30BF7-8796-4D0B-BA4B-56426824F46D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

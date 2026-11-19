@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRCGenerator", "CRCGenerator.vcproj", "{C80C3F14-E068-47AA-9630-86995286E0FF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C80C3F14-E068-47AA-9630-86995286E0FF}.Debug.ActiveCfg = Debug|Win32
+		{C80C3F14-E068-47AA-9630-86995286E0FF}.Debug.Build.0 = Debug|Win32
+		{C80C3F14-E068-47AA-9630-86995286E0FF}.Release.ActiveCfg = Release|Win32
+		{C80C3F14-E068-47AA-9630-86995286E0FF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

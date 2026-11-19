@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CContentManagementLibrary", "CContentManagementLibrary.vcproj", "{9CC04368-CCCF-4419-99EA-31C01322B391}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D8F80247-351A-4439-9D73-D23AD5706B17} = {D8F80247-351A-4439-9D73-D23AD5706B17}
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4} = {523F1660-CEF2-4173-9E5D-1A610EC7E9B4}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AXSocketsLib", "..\AXSocketsLib\AXSocketsLib.vcproj", "{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContentServerApplication", "..\ContentServerApplication\ContentServerApplication.vcproj", "{536657F6-1652-4562-90B0-7291B19FA6E5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9CC04368-CCCF-4419-99EA-31C01322B391} = {9CC04368-CCCF-4419-99EA-31C01322B391}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContentServerService", "..\ContentServerService\AX_AIServerService.vcproj", "{F960F6F2-FD23-43B6-A61A-486BC29A6B64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9CC04368-CCCF-4419-99EA-31C01322B391} = {9CC04368-CCCF-4419-99EA-31C01322B391}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EXGameCore", "..\EXGameCore\EXGameCore\EXGameCore.vcproj", "{D8F80247-351A-4439-9D73-D23AD5706B17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AXControl|Win32 = AXControl|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.AXControl|Win32.ActiveCfg = Release|Win32
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.AXControl|Win32.Build.0 = Release|Win32
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.Debug|Win32.Build.0 = Debug|Win32
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.Release|Win32.ActiveCfg = Release|Win32
+		{9CC04368-CCCF-4419-99EA-31C01322B391}.Release|Win32.Build.0 = Release|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.AXControl|Win32.ActiveCfg = Release|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.AXControl|Win32.Build.0 = Release|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.Debug|Win32.Build.0 = Debug|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.Release|Win32.ActiveCfg = Release|Win32
+		{523F1660-CEF2-4173-9E5D-1A610EC7E9B4}.Release|Win32.Build.0 = Release|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.AXControl|Win32.ActiveCfg = Release|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.AXControl|Win32.Build.0 = Release|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.Debug|Win32.Build.0 = Debug|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.Release|Win32.ActiveCfg = Release|Win32
+		{536657F6-1652-4562-90B0-7291B19FA6E5}.Release|Win32.Build.0 = Release|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.AXControl|Win32.ActiveCfg = AXControl|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.AXControl|Win32.Build.0 = AXControl|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Debug|Win32.Build.0 = Debug|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Release|Win32.ActiveCfg = Release|Win32
+		{F960F6F2-FD23-43B6-A61A-486BC29A6B64}.Release|Win32.Build.0 = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.AXControl|Win32.ActiveCfg = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.AXControl|Win32.Build.0 = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Debug|Win32.Build.0 = Debug|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Release|Win32.ActiveCfg = Release|Win32
+		{D8F80247-351A-4439-9D73-D23AD5706B17}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

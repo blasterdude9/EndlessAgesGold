@@ -1,0 +1,1 @@
+<%@ page language="C#" autoeventwireup="true" inherits="ContentManager, App_Web_yadxhryz" %>

@@ -1,0 +1,6 @@
+#include "resource.h"
+
+IDI_LAUNCHER   ICON    "res/EALauncher.ico"
+IDR_BG         RCDATA  "res/bg.jpg"
+IDR_BTN_UP     RCDATA  "res/btn_up.png"
+IDR_BTN_HOVER  RCDATA  "res/btn_hover.png"
